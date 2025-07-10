@@ -1,0 +1,12 @@
+source ~/.commonrc
+
+USER="$(whoami)"
+
+[[ $- == *i* ]] && source "/home/${USER}/.fzf/shell/completion.zsh" 2> /dev/null
+source "/home/${USER}/.fzf/shell/key-bindings.zsh"
+
+# bind v in normal mode to edit current command in the editor
+bindkey -M vicmd v edit-command-line
+
+# zsh has a built in function that conflicts with mcd, delete it.
+compdef -d mcd

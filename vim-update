@@ -1,0 +1,17 @@
+#!/bin/env bash
+set -x
+TODAY=$(date '+%Y-%m-%d')
+UNLOAD_PATH="/opt/nvim/$TODAY"
+ARCHIVE_NAME='nvim-linux-x86_64.tar.gz'
+OWNER="$(whoami)"
+
+curl -LO "https://github.com/neovim/neovim/releases/latest/download/$ARCHIVE_NAME"
+
+sudo rm -rf $UNLOAD_PATH
+sudo mkdir -p "$UNLOAD_PATH" && sudo tar -C "$UNLOAD_PATH" -xzf "$ARCHIVE_NAME"
+sudo chown "$OWNER" $UNLOAD_PATH
+sudo ln -sf $UNLOAD_PATH/*/bin/nvim /usr/bin/nvim
+#
+#remove default parser, it clashes with treesitter
+#rm -rf /opt/nvim-linux64/lib/nvim/parser
+#

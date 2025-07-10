@@ -1,0 +1,29 @@
+set -o vi
+bindkey -v
+
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
+alias vimdiff="nvim -d"
+alias cat="bat"
+alias tm="~/.scripts/tmux-attach.sh"
+alias rmf="rm -rf"
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+source ~/.secrets
+export EDITOR=nvim
+
+### PATH ###
+# recursively add scripts folders
+path+=(~/.scripts_private ~/.scripts_private/**/*(N/))
+path+=(~/.scripts ~/.scripts/**/*(N/))
+path+=(~/.fzf/bin)
+### END PATH ###
+
+function mcd () {
+   mkdir -p "$1"
+   cd "$1"
+}
+
