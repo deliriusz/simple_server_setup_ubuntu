@@ -2,17 +2,19 @@
 set -x
 
 sudo apt install git tmux bat
-mkdir ~/.scripts
-touch ~/.secrets
-cp vim-update ~/.scripts/
-cp tmux-attach.sh ~/.scripts/
 
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+shopt -s nullglob
+files=(~/.ssh/id_*)
+if (( ${#files[@]} )); then
+    echo "At least one SSH private key exists."
+else
+    echo "No SSH private key found."
+    read -p "Enter mail address: " address
+    ssh-keygen -t rsa -b 4096 -C "$address"
+fi
 
-cat _bashrc >> ~/.bashrc
-cat _zshrc >> ~/.zshrc
-
-cp _tmux.conf ~/.tmux.conf
-
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+cd /tmp
+git clone git@github.com:deliriusz/simple_server_setup_ubuntu.git
+cd /tmp/simple_server_setup_ubuntu
+chmod 755 install.sh
+install.sh
