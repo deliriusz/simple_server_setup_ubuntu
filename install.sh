@@ -14,8 +14,6 @@ cat _zshrc >> ~/.zshrc
 
 cp _tmux.conf ~/.tmux.conf
 
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
 mkdir -p ~/.config/
 cp -R ./nvim_conf ~/.config/nvim
 
@@ -28,7 +26,6 @@ read -p "Do you want to run nvim install and vim-update script? (y/n): " nvim_ch
 if [[ $nvim_choice =~ ^[Yy]$ ]]; then
     echo "Running nvim install and vim-update..."
     ~/.scripts/vim-update
-    # nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
     echo "Nvim setup completed!"
 else
     echo "Skipping nvim install and vim-update. Installing vim with Vundle..."
