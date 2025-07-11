@@ -1,0 +1,5 @@
+require('config.diagnostics-config')
+require('config.ft')
+require('config.remap')
+require('config.set')
+require('config.lazy')

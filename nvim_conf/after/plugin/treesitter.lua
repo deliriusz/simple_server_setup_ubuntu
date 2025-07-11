@@ -4,7 +4,7 @@
 -- however the problem is that nvim is installed via snap and I have problems running it otherwise. So I decided to postpone it
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "help", "javascript", "typescript", "c", "go", "lua", "rust", "solidity" },
+  ensure_installed = { "javascript", "typescript", "c", "go", "lua", "rust", "solidity" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,

@@ -1,5 +1,10 @@
 local api = vim.api
 
+-- disable netrw at the very start of your init.lua
+-- required for nvim-tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.opt.autoindent = true
 vim.opt.number = true
 vim.opt.relativenumber = true

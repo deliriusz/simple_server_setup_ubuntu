@@ -1,19 +1,15 @@
--- to get default mappings, type
--- :help nvim-tree-default-mappings
 require("nvim-tree").setup({
-   sort_by = "case_sensitive",
+   sort = {
+     sorter = "case_sensitive",
+   },
    view = {
-      adaptive_size = true,
-      mappings = {
-         list = {
-            { key = "u", action = "dir_up" },
-         },
-      },
+     width = 30,
+     -- adaptive_size = true,
    },
    renderer = {
-      group_empty = true,
+     group_empty = true,
    },
    filters = {
-      dotfiles = true,
+     dotfiles = true,
    },
-})
+ })
