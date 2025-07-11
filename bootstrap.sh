@@ -14,7 +14,8 @@ else
 fi
 
 cd /tmp
-git clone git@github.com:deliriusz/simple_server_setup_ubuntu.git
+git clone https://github.com/deliriusz/simple_server_setup_ubuntu.git
+
 cd /tmp/simple_server_setup_ubuntu
 chmod 755 install.sh
 install.sh
