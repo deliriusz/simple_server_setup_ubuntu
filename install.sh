@@ -15,3 +15,6 @@ cat _zshrc >> ~/.zshrc
 cp _tmux.conf ~/.tmux.conf
 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+mkdir -p ~/.config/
+cp -R ./nvim_conf ~/.config/nvim
