@@ -17,6 +17,3 @@ source ~/.commonrc
 
 [[ $- == *i* ]] && source "${HOME}/.fzf/shell/completion.bash" 2> /dev/null
 source "${HOME}/.fzf/shell/key-bindings.bash"
-
-# bind v in normal mode to edit current command in the editor
-bindkey -M vicmd v edit-command-line

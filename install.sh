@@ -3,6 +3,7 @@ set -x
 
 mkdir -p ~/.scripts
 touch ~/.secrets
+chmod 600 ~/.secrets
 cp vim-update ~/.scripts/
 cp tmux-attach.sh ~/.scripts/
 
@@ -31,7 +32,7 @@ if [[ $nvim_choice =~ ^[Yy]$ ]]; then
 else
     echo "Skipping nvim install and vim-update. Installing vim with Vundle..."
     # Vim setup with Vundle
-    mkdir ~/.vim/bundle && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    mkdir ~/.vim ; mkdir ~/.vim/bundle && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     cp _vimrc ~/.vimrc
 fi
 
