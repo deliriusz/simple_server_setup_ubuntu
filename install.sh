@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -x
 
-mkdir ~/.scripts
+mkdir -p ~/.scripts
 touch ~/.secrets
 cp vim-update ~/.scripts/
 cp tmux-attach.sh ~/.scripts/
