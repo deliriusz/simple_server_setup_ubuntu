@@ -11,6 +11,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 cat _bashrc >> ~/.bashrc
 cat _zshrc >> ~/.zshrc
+cat _commonrc > ~/.commonrc
 
 cp _tmux.conf ~/.tmux.conf
 
