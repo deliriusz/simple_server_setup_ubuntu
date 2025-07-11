@@ -40,7 +40,9 @@ read -p "Do you want to install node_exporter? (y/n): " node_choice
 if [[ $node_choice =~ ^[Yy]$ ]]; then
     echo "Installing node_exporter..."
     chmod +x ./install_node_exporter.sh
-    ./install_node_exporter.sh
+
+    read -p "Enter the port for node_exporter: " port
+    ./install_node_exporter.sh $port
     echo "Node exporter installation completed!"
 else
     echo "Skipping node_exporter installation."
